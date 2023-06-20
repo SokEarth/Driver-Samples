@@ -1,0 +1,11 @@
+#pragma once
+#include <wdm.h>
+
+#define PRIORITY_BOOSTER_DEVICE 0x8000
+
+typedef struct _THREAD_DATA {
+	ULONG ThreadId;
+	int Priority;
+} ThreadData;
+
+#define IOCTL_PRIORITY_BOOSTER_SET_PRIORITY CTL_CODE (PRIORITY_BOOSTER_DEVICE, \0x800, METHOD_NEITHER, FILE_ANY_ACCESS);
