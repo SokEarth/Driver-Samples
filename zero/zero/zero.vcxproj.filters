@@ -19,8 +19,16 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <Inf Include="zero.inf">
-      <Filter>Driver Files</Filter>
-    </Inf>
+    <ClCompile Include="pch.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="useZero.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="pch.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

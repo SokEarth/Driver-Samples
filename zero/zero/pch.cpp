@@ -44,8 +44,12 @@ NTSTATUS DriverEntry(PDRIVER_OBJECT DriverObject, PUNICODE_STRING RegistryPath) 
 }
 
 NTSTATUS ZeroUnload(PDRIVER_OBJECT DriverObject) {
+	UNICODE_STRING symLink = RTL_CONSTANT_STRING(L"\\??\\Zero");
+	IoDeleteSymbolicLink(&symLink);
 
+	IoDeleteDevice(DriverObject -> DeviceObject);
 }
+
 NTSTATUS ZeroCreateClose(PIRP Irp, NTSTATUS status = STATUS_SUCCESS, ULONG_PTR info = 0) {
 	Irp->IoStatus.Status = status;
 	Irp->IoStatus.Information = info;
